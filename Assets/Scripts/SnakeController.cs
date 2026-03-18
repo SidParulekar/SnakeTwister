@@ -176,16 +176,9 @@ public abstract class SnakeController : MonoBehaviour
     {
         switch (tag)
         {
-            case "Food":
-                /*SoundManager.Instance.Play(Sounds.FoodConsume);
-                Grow();*/
+            case "Food":               
                 SnakeEventBus.PublishScoreChanged(scoreIncrement);
-                break;
-
-            /*case "Poison" when !shield:
-                SoundManager.Instance.Play(Sounds.PoisonConsume);
-                Shrink();
-                break;*/
+                break;            
 
             case "ScoreBoost":
                 SoundManager.Instance.Play(Sounds.ScoreBoostPickup);

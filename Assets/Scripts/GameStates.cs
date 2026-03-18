@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayingState : IGameState
 {
     public void Enter(GameController ctx)
-    {
-        //ctx.SetGameObjectsEnabled(true);
+    {        
         GameEventBus.PublishResumed();
     }
 
@@ -26,9 +25,7 @@ public class PlayingState : IGameState
 public class PausedState : IGameState
 {
     public void Enter(GameController ctx)
-    {
-        //ctx.SetGameObjectsEnabled(false);
-        //ctx.pauseGameScreen.SetActive(true);
+    {       
         GameEventBus.PublishPaused();
     }
 
@@ -48,9 +45,7 @@ public class PausedState : IGameState
 public class GameOverState : IGameState
 {
     public void Enter(GameController ctx)
-    {
-        //ctx.SetGameObjectsEnabled(false);
-        //ctx.SaveHighScore();
+    {       
         GameEventBus.PublishEnded();
         ctx.gameOverUI.SetActive(true);       
     }

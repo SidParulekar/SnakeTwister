@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>Enable or disable all gameplay objects at once.</summary>
-    public void SetGameObjectsEnabled(bool enabled)
+    private void SetGameObjectsEnabled(bool enabled)
     {
         foodController.enabled = enabled;
         poisonController.enabled = enabled;
@@ -75,12 +75,12 @@ public class GameController : MonoBehaviour
         if (snakeTwoController) snakeTwoController.enabled = enabled;
     }
 
-    public void TogglePauseGameScreen(bool enabled)
+    private void TogglePauseGameScreen(bool enabled)
     {
         pauseGameScreen.SetActive(enabled);
     }
 
-    public void SaveHighScore()
+    private void SaveHighScore()
     {
         if (!playerTwoLivesController)
             HighScoreController.Instance.SetHighScore(scoreController.GetScore());
